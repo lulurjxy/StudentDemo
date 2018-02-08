@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="car_id">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="road_id">
+        <item>1号路口</item>
+        <item>2号路口</item>
+        <item>3号路口</item>
+        <item>4号路口</item>
+    </string-array>
+    <string-array name="direction">
+        <item>横向</item>
+        <item>纵向</item>
+    </string-array>
+    <string-array name="light">
+        <item>红灯时长</item>
+        <item>绿灯时长</item>
+    </string-array>
+    <string-array name="time">
+        <item>5s</item>
+        <item>10s</item>
+        <item>15s</item>
+        <item>20s</item>
+        <item>25s</item>
+    </string-array>
+    <string-array name="order_light">
+        <item>红灯升序</item>
+        <item>绿灯降序</item>
+    </string-array>
+    <string-array name="order_direction">
+        <item>横向</item>
+        <item>纵向</item>
+        <item>所有</item>
+    </string-array>
+    <string-array name="title_road_light">
+        <item>路口</item>
+        <item>红灯时长/s</item>
+        <item>绿灯时长/s</item>
+        <item>黄灯时长/s</item>
+    </string-array>
+    <string-array name="title_etc_log">
+        <item>车号</item>
+        <item>驶入时间</item>
+        <item>驶出时间</item>
+        <item>费用/次</item>
+    </string-array>
+    <string-array name="menu_content">
+        <item>我的座驾</item>
+    </string-array>
+    <string-array name="locus_time">
+        <item>15s之前</item>
+        <item>30s之前</item>
+        <item>45s之前</item>
+        <item>1min之前</item>
+        <item>1min15s之前</item>
+        <item>1min30s之前</item>
+        <item>1min45s之前</item>
+        <item>2min之前</item>
+    </string-array>
+
+</resources>

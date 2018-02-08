@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" 
+    android:background="@drawable/main_bg">
+
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/TextTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/car_control_start_stop" />
+
+    <TextView
+        android:id="@+id/t1"
+        style="@style/TextContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="10dp"
+         android:layout_marginLeft="@dimen/h2_left"
+        android:text="@string/car_id" />
+
+    <Switch
+        android:id="@+id/car_control_sh_start_stop"
+        style="@style/TextContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/t1"
+        android:layout_alignRight="@+id/car_control_sp_car_id"
+        android:layout_below="@+id/car_control_sp_car_id"
+        android:layout_marginTop="10dp"
+        android:text="@string/start_stop"
+        android:textOn="@string/stop"
+        android:textOff="@string/start" />
+
+    <Spinner
+        android:id="@+id/car_control_sp_car_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_toRightOf="@+id/t1" />
+
+</RelativeLayout>

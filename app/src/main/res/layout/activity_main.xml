@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/layout_title"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/query_park_iv_one"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginRight="200dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="3"
+        android:background="@mipmap/transport"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/main_tv_envir"
+            style="@style/TextContent"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/envir" />
+
+        <TextView
+            android:id="@+id/main_tv_distance"
+            style="@style/TextContent"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/bus_station" />
+    </LinearLayout>
+
+</LinearLayout>
