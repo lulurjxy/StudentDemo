@@ -27,7 +27,7 @@ public abstract class BaseFragment extends Fragment implements OnClickListener {
 
     private void getIP() {
         SharedPreferences sh = getActivity().getSharedPreferences("ipset", 0);
-        mBasURL = "http://" + sh.getString("ip", "192.168.1.131") + ":" + 8080
+        mBasURL = "http://" + sh.getString("ip", getString(R.string.default_ip)) + ":" + 8080
                 + "/transportservice/type/jason/action/";
     }
 

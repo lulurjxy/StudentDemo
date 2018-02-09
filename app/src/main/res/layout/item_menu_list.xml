@@ -2,13 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center_vertical" >
+    android:layout_gravity="center_vertical">
 
     <ImageView
         android:id="@+id/icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/content"
@@ -16,30 +17,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="58dp"
+        android:layout_marginStart="58dp"
         android:layout_marginTop="7dp"
+        android:layout_toEndOf="@+id/icon"
         android:layout_toRightOf="@+id/icon"
         android:text="TextView" />
-
-    <!--<ImageView-->
-        <!--android:id="@+id/query_park_iv_two"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:layout_marginRight="20dp"-->
-        <!--android:layout_marginTop="7dp"-->
-        <!--android:gravity="center_vertical"-->
-        <!--android:src="@drawable/arrow" />-->
-
-<!--     <View -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="1dp" -->
-<!--         android:layout_alignParentTop="true" -->
-<!--         android:background="@color/divide" /> -->
-
-<!--     <View -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="1dp" -->
-<!--         android:layout_alignParentBottom="true" -->
-<!--         android:background="@color/divide" /> -->
-
 </RelativeLayout>

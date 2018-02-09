@@ -10,7 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 小车控制
+ * 小车控制MQTT请求
  */
 public class SetCarActionMqttRequest extends BaseMqttRequest {
     private int carId;

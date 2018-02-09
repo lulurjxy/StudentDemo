@@ -24,6 +24,9 @@ public class IpSetActivity extends BaseActivity {
     private EditText mIP2ET;
     private EditText mIP3ET;
     private EditText mIP4ET;
+    /**
+     * 切换网络请求方式http,mqtt;默认http
+     */
     private Switch mSwitch;
     private SharedPreferences mSetIPPreferences;
 
@@ -40,12 +43,12 @@ public class IpSetActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        String[] ip = mSetIPPreferences.getString("ip", "192.168.1.131").split("\\.");
+        String[] ip = mSetIPPreferences.getString("ip", getString(R.string.default_ip)).split("\\.");
         if (ip.length >= 4) {
-            mIP1ET.setText(ip[0] + "");
-            mIP2ET.setText(ip[1] + "");
-            mIP3ET.setText(ip[2] + "");
-            mIP4ET.setText(ip[3] + "");
+            mIP1ET.setText(String.format("%s", ip[0]));
+            mIP2ET.setText(String.format("%s", ip[1]));
+            mIP3ET.setText(String.format("%s", ip[2]));
+            mIP4ET.setText(String.format("%s", ip[3]));
         }
     }
 
@@ -59,7 +62,7 @@ public class IpSetActivity extends BaseActivity {
         mSureBtn = (Button) findViewById(R.id.ip_btn_sure);
         mSwitch = (Switch) findViewById(R.id.switch_connection_type);
         mSureBtn.setOnClickListener(this);
-        mSwitch.setChecked(mSetIPPreferences.getBoolean("isHttp", false));
+        mSwitch.setChecked(mSetIPPreferences.getBoolean("isHttp", true));
         mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -81,7 +84,7 @@ public class IpSetActivity extends BaseActivity {
 
             mSetIPPreferences.edit().putString("ip", string).apply();
             finish();
-            MyToast.getToast(IpSetActivity.this, mSetIPPreferences.getString("ip", "192.168.1.131"));
+            MyToast.getToast(IpSetActivity.this, mSetIPPreferences.getString("ip", getString(R.string.default_ip)));
         }
     }
 

@@ -14,7 +14,9 @@ import com.example.studentdemo.adapter.ListAdapter;
 
 import java.util.List;
 
-
+/**
+ * listview初始化工具
+ */
 public class ListViewFactory {
     public static ListAdapter getListView(Context context, LinearLayout layout,
                                           List<Object[]> datas,

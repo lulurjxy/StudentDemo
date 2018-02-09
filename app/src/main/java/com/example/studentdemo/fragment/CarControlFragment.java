@@ -30,7 +30,8 @@ public class CarControlFragment extends BaseFragment {
     @Override
     protected void activityCreated() {
         sh = getActivity().getSharedPreferences("action", Context.MODE_PRIVATE);
-        final boolean isHttp = getActivity().getSharedPreferences("ipset", Context.MODE_PRIVATE).getBoolean("isHppt", true);
+        final boolean isHttp = getActivity().getSharedPreferences("ipset", Context.MODE_PRIVATE)
+                .getBoolean("isHttp", true);//获取设置中的请求方式
         mSpinner = (Spinner) getView().findViewById(R.id.car_control_sp_car_id);
         SpinnerFactory.getSpinner(getActivity(), mSpinner, mCarIds, new SpinnerFactory.OnItemSelected() {
 
@@ -51,7 +52,7 @@ public class CarControlFragment extends BaseFragment {
                     action = actions[1];
                 }
                 sh.edit().putBoolean(carid + "", isChecked).apply();
-                if (isHttp)
+                if (isHttp)//判断请求方式是不是HTTP，不是则用MQTT请求
                     connec();
                 else
                     mqttConnec();

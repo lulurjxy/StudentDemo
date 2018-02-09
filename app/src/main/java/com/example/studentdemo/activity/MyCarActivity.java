@@ -13,6 +13,9 @@ import com.example.studentdemo.fragment.CarControlFragment;
 
 
 public class MyCarActivity extends BaseActivity {
+    /**
+     * 此demo中用FragmentTabHost切换fragment，学生也可用其它方式实现
+     */
     private FragmentTabHost mTabHost;
 
     @Override
@@ -33,6 +36,9 @@ public class MyCarActivity extends BaseActivity {
         setListener();
     }
 
+    /**
+     * 添加Fragment切换按钮
+     */
     private void addTab() {
         String[] tag = {
                 "control", "condition"
@@ -45,8 +51,7 @@ public class MyCarActivity extends BaseActivity {
         };
         for (int i = 0; i < tag.length; i++) {
             mTabHost.addTab(
-                    mTabHost.newTabSpec(tag[i]).setIndicator(views[i]),
-                    cls[i], null);
+                    mTabHost.newTabSpec(tag[i]).setIndicator(views[i]), cls[i], null);
         }
     }
 
@@ -64,6 +69,12 @@ public class MyCarActivity extends BaseActivity {
         });
     }
 
+    /**
+     * 切换fragment按钮的视图
+     *
+     * @param resId 按钮名称
+     * @return view
+     */
     private View getTabView(int resId) {
         View view = LayoutInflater.from(this).inflate(R.layout.textview_tab, null);
         TextView textView = (TextView) view.findViewById(R.id.content);

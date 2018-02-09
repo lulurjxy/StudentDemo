@@ -10,7 +10,9 @@ import android.widget.Spinner;
 
 import com.example.studentdemo.R;
 
-
+/**
+ * spinner初始化工具
+ */
 public class SpinnerFactory {
     public interface OnItemSelected {
         void onSelected(int position);

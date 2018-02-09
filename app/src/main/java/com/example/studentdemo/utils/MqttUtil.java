@@ -78,6 +78,12 @@ public class MqttUtil {
                     });
                 }
 
+                /**
+                 * 订阅数据到达后，对应的处理
+                 * @param topic 订阅的主题
+                 * @param message 返回的信息
+                 * @throws Exception 错误信息
+                 */
                 @Override
                 public void messageArrived(final String topic, final MqttMessage message) throws Exception {
                     handler.post(new Runnable() {

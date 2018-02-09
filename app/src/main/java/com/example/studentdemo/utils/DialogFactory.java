@@ -7,6 +7,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 
+/**
+ * AlertDialog初始化工具
+ */
 public class DialogFactory {
     static Dialog dialog = null;
 
@@ -15,7 +18,7 @@ public class DialogFactory {
     }
 
     public static void showDialog(Context context, String title, String msg,
-            final OnListener oAfter) {
+                                  final OnListener oAfter) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context, AlertDialog.THEME_HOLO_DARK);
         builder.setTitle(title);
         builder.setMessage(msg);

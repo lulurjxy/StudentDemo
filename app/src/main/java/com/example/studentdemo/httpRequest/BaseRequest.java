@@ -18,7 +18,7 @@ public abstract class BaseRequest {
     public BaseRequest(Context context) {
         this.context = context;
         url = "http://"
-                + context.getSharedPreferences("ipset", 0).getString("ip", "192.168.1.131") + ":"
+                + context.getSharedPreferences("ipset", 0).getString("ip", "192.168.0.238") + ":"
                 + 8080
                 + "/transportservice/type/jason/action/";
     }

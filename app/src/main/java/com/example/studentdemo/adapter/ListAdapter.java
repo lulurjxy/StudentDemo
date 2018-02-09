@@ -13,9 +13,9 @@ import android.widget.TextView;
 import java.util.List;
 
 public class ListAdapter extends ArrayAdapter<Object[]> {
-    List<Object[]> objects;
-    Context context;
-    int count;
+    private List<Object[]> objects;
+    private Context context;
+    private int count;
 
     public ListAdapter(Context context, List<Object[]> objects, int titleCount) {
         super(context, 0, objects);
