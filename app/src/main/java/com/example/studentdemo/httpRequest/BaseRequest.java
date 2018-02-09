@@ -23,15 +23,20 @@ public abstract class BaseRequest {
                 + "/transportservice/type/jason/action/";
     }
 
-    public void connec(final OnGetDataListener listener) {
+    /**
+     * 连接服务器
+     *
+     * @param listener 结果返回监听
+     */
+    public void conToServer(final OnGetDataListener listener) {
         mNetUtil1 = new HttpNetUtil();
-        mNetUtil1.asynPost(url + getAddr(), getParams(), new HttpNetUtil.ResponseListener() {
+        mNetUtil1.asynPost(url + getAddr(), params(), new HttpNetUtil.ResponseListener() {
 
             @Override
             public void success(String result) {
                 if (listener != null) {
                     if (!result.isEmpty()) {
-                        listener.onReturn(anaylizeResponse(result));
+                        listener.onReturn(doResult(result));
                     }
                 }
             }
@@ -45,7 +50,13 @@ public abstract class BaseRequest {
 
     protected abstract String getAddr();
 
-    protected abstract String getParams();
+    protected abstract String params();
 
-    protected abstract Object anaylizeResponse(String responseString);
+    /**
+     * 处理结果
+     *
+     * @param responseString 返回结果
+     * @return 处理后返回的对象
+     */
+    protected abstract Object doResult(String responseString);
 }

@@ -18,9 +18,9 @@ public abstract class BaseMqttRequest {
 
     private String url;
     private Context context;
-    final MqttUtil mqttUtil = new MqttUtil();
+    private final MqttUtil mqttUtil = new MqttUtil();
 
-    public BaseMqttRequest(Context context) {
+    BaseMqttRequest(Context context) {
         this.context = context;
     }
 
@@ -28,9 +28,13 @@ public abstract class BaseMqttRequest {
         void onReturn(Object data);
     }
 
-
-    public void connec(final OnGetDataListener listener) {
-        mqttUtil.myMqttRequest(getBrokerUrl(), getTopicPub(), getTopicSub(), getParams(), new MqttUtil.MyMqttCallBack() {
+    /**
+     * 连接服务器
+     *
+     * @param listener 得到结果的监听
+     */
+    public void conToBroker(final OnGetDataListener listener) {
+        mqttUtil.myMqttRequest(getBroker(), getPub(), getSub(), params(), new MqttUtil.MyMqttCallBack() {
             @Override
             public void onConnectionLost(String info) {
 //                listener.onReturn(info);
@@ -44,7 +48,7 @@ public abstract class BaseMqttRequest {
                         JSONObject jsonObject = null;
                         try {
                             jsonObject = new JSONObject(result);
-                            listener.onReturn(anaylizeResponse(jsonObject.getString("serverinfo")));
+                            listener.onReturn(doResult(jsonObject.getString("serverinfo")));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -64,30 +68,30 @@ public abstract class BaseMqttRequest {
     /**
      * @return 代理服务器地址
      */
-    private String getBrokerUrl() {
+    private String getBroker() {
         return context.getSharedPreferences("ipset", Context.MODE_PRIVATE).getString("ip", "192.168.0.238");
     }
 
     /**
      * @return 传递的参数
      */
-    protected abstract String getParams();
+    protected abstract String params();
 
     /**
      * @return 推送主题
      */
-    protected abstract String getTopicPub();
+    protected abstract String getPub();
 
     /**
      * @return 订阅主题
      */
-    protected abstract String getTopicSub();
+    protected abstract String getSub();
 
     /**
      * @param responseString 返回的结果
      * @return 返回结果处理后返回对应的对象
      */
-    protected abstract Object anaylizeResponse(String responseString);
+    protected abstract Object doResult(String responseString);
 
     /**
      * 断开连接

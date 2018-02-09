@@ -38,7 +38,7 @@ public class SetCarActionMqttRequest extends BaseMqttRequest {
 
 
     @Override
-    protected String getParams() {
+    protected String params() {
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put(AppConfig.KEY_CAR_ACTION, action);
@@ -50,17 +50,17 @@ public class SetCarActionMqttRequest extends BaseMqttRequest {
     }
 
     @Override
-    protected String getTopicPub() {
+    protected String getPub() {
         return "setCarMove";
     }
 
     @Override
-    protected String getTopicSub() {
+    protected String getSub() {
         return "repSetCarMove";
     }
 
     @Override
-    protected Object anaylizeResponse(String responseString) {
+    protected Object doResult(String responseString) {
         String result = "";
         try {
             JSONObject jsonObject = new JSONObject(responseString);

@@ -71,7 +71,7 @@ public class CarControlFragment extends BaseFragment {
         CarActionRequest carActionRequest = new CarActionRequest(getActivity());
         carActionRequest.setAction(action);
         carActionRequest.setCarId(carid);
-        carActionRequest.connec(new BaseRequest.OnGetDataListener() {
+        carActionRequest.conToServer(new BaseRequest.OnGetDataListener() {
 
             @Override
             public void onReturn(Object data) {
@@ -87,7 +87,7 @@ public class CarControlFragment extends BaseFragment {
         SetCarActionMqttRequest request = new SetCarActionMqttRequest(getActivity());
         request.setAction(action);
         request.setCarId(carid);
-        request.connec(new BaseMqttRequest.OnGetDataListener() {
+        request.conToBroker(new BaseMqttRequest.OnGetDataListener() {
             @Override
             public void onReturn(Object data) {
                 if (data.equals("ok") && CarControlFragment.this.isAdded()) {

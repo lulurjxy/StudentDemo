@@ -39,7 +39,7 @@ public class CarActionRequest extends BaseRequest {
     }
 
     @Override
-    protected String getParams() {
+    protected String params() {
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put(AppConfig.KEY_CAR_ACTION, action);
@@ -51,7 +51,7 @@ public class CarActionRequest extends BaseRequest {
     }
 
     @Override
-    protected Object anaylizeResponse(String responseString) {
+    protected Object doResult(String responseString) {
         String result = "";
         try {
             JSONObject jsonObject = new JSONObject(responseString);
